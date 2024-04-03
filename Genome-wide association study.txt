@@ -1,0 +1,28 @@
+#EOAD 
+gcta \
+--bfile case_control_final \
+--grm-sparse cgrm_sp \
+--fastGWA-mlm-binary \
+--pheno GWAS_pheno \
+--mpheno 1 \
+--thread-num 16 \
+--covar GWAScov_discrete \
+--qcovar GWAScov_quantitative \
+--keep EOAD.id \
+--out EOAD
+
+#LOAD 
+gcta \
+--bfile case_control_final \
+--grm-sparse grm_sp \
+--fastGWA-mlm-binary \
+--pheno GWAS_pheno \
+--mpheno 1 \
+--thread-num 16 \
+--covar GWAScov_discrete \
+--qcovar GWAScov_quantitative \
+--keep LOAD.id \
+--out LOAD
+
+#meta
+metal metal.config.txt
